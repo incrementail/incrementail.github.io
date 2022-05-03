@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cool Game</title>
+<script>
+
+var myWindow = "";
+var x = 0
+var e = "";
+var checkR = setInterval(check, 2);
+var pop = window.open('about:blank', 'new_window_123', 'height=150,width=150');
+
+
+// Detect pop blocker
+setTimeout(function() {
+if(!pop || pop.closed || pop.closed == 'undefined' || pop == 'undefined' || parseInt(pop.innerWidth) == 0 || pop.document.documentElement.clientWidth != 150 || pop.document.documentElement.clientHeight != 150){
+pop && pop.close();
+alert('Popups must be enabled.');
+}else{
+alert('Popups is enabled.');
+pop && pop.close();
+}}, 1000);
+
+function check() {
+  if (x == 2) {
+    clearInterval(e)
+    x = 0;
+  }
+}
+
+function openWin() {
+  myWindow = window.open("", "", "width=400, height=200, left=500, top=500");
+  if (x == 0) {
+    e = setInterval(openWin,1000);
+    x = 1;
+  }
+  if (x == 2) {
+    x = 0;
+  }
+};
+
+function closeWin() {
+  myWindow.close();
+  clearInterval(e);
+  x = 2;
+};
+</script>
+</head>
+<body>
+
+<input type="button" value="Open App" onclick="openWin()" />
+<input type="button" value="Close App" onclick="closeWin()" />
+
+</body>
+</html>
