@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Homepage</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>My Homepage</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2>Play my newest game here: <a href="https://incrementail.github.io/funny">e</a></h2>
-  </body>
+	<head>
+		<script src="./script.js"></script>
+		<title>Shpere Calculator</title>
+	</head>
+	<body>
+		<h1>
+			Sphere Calculator
+		</h1>
+		<h2>
+			Enter the values of the sphere:
+		</h2>
+		<label for="pi">Let pi be...</label>
+		<input type="text" id="pi" value="3.14159265" placeholder="Input the value of pi..."> <button onclick="alert('Enter the value you want for pi. Put pi for more digits.')">?</button>
+		<br>
+		<label for="radius">Radius:</label>
+		<input type="text" id="radius" value="" placeholder="The radius will be here...">
+		<br>
+		<label for="surfaceArea">Surface area:</label>
+		<input type="text" id="surfaceArea" value="" placeholder="The surface area will be here...">
+		<br>
+		<label for="volume">Volume:</label>
+		<input type="text" id="volume" value="" placeholder="The volume will be here...">
+		<br>
+		<br><input type="button" id="submit" value="Enter" onclick="calculate()">
+	</body>
 </html>
