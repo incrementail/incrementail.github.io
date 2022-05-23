@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Canvas Test</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;" onmousemove="showCoords(event)"></canvas>
+			<script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var all = [1,2,3,4,5,6,7,8,9,0, "A", "B", "C", "D", "E", "F"]
+        var num = Math.floor((Math.random() * 9999999) + 1000000);
+        var text = "#" + num.toString(16);
+        var x = event.clientX - 75;
+        var y = event.clientY - 37.5;
+        
+        ctx.fillStyle = "#00F0F0";
+        ctx.fillRect(x, y, 150, 75);
+        
+        function showCoords(event) {
+          //ctx.clearRect(0, 0, 600, 400)
+          x = event.clientX - 75;
+          y = event.clientY - 37.5;
+          num = Math.floor((Math.random() * 9999999) + 1000000);
+          text = "#" + num.toString(16);
+          ctx.fillStyle = text
+          ctx.fillRect(x, y, 150, 75);
+        }
+        
+        setInterval(showCoords(event), 1)
+</script>
+	</body>
+</html>
