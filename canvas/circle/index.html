@@ -5,6 +5,9 @@
 	</head>
 	<body>
 		<canvas id="myCanvas" width="600" height="400" style="border:1px solid #000000;" onmousemove="showCoords(event)"></canvas>
+		<br>
+		<input type="checkbox" id="clearB" name="clear">
+		<label for="clear">Tick this to only have one rectangle at a time</label>
 			<script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -18,7 +21,9 @@
         ctx.fillRect(x, y, 150, 75);
         
         function showCoords(event) {
-          //ctx.clearRect(0, 0, 600, 400)
+          if (document.getElementById("clearB").checked == true) {
+            ctx.clearRect(0, 0, 600, 400);
+          }
           x = event.clientX;
           y = event.clientY;
           num = Math.floor((Math.random() * 9999999) + 1000000);
